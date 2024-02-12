@@ -1,5 +1,5 @@
 
-__version__="0.0.2"
+__version__="0.0.3"
 
 import os
 
@@ -43,7 +43,13 @@ if __name__ == "__main__":
         for duplicate in duplicates:
             print(duplicate)
         
-        delete_duplicates(duplicates)
-        print("Duplicate files deleted.")
+        # Prompt a final confirmation by user; since deleted file(s) cannot be recovered
+        user_confirmation = input("Confirm to clean it all? (Y/n) ")
+        
+        if user_confirmation.lower() == 'y':
+            delete_duplicates(duplicates)
+            print("Duplicate files deleted.")
+        else:
+            print("Cancelled.")
     else:
         print("No duplicate files found.")
