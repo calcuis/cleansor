@@ -43,7 +43,7 @@ if __name__ == "__main__":
         for duplicate in duplicates:
             print(duplicate)
         
-        # Prompt a final confirmation by user; since deleted file(s) cannot be recovered
+        # Prompt a final confirmation to user since deleted file(s) cannot be recovered
         user_confirmation = input("Confirm to clean it all? (Y/n) ")
         
         if user_confirmation.lower() == 'y':
